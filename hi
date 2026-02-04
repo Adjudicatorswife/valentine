@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Valentine's Surprise for Jo 💖</title>
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: 'Comic Sans MS', cursive, sans-serif;
+        background: linear-gradient(to bottom, #ffdde1, #ee9ca7);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        text-align: center;
+        color: #fff;
+    }
+
+    #container {
+        background: rgba(255, 192, 203, 0.8);
+        padding: 40px;
+        border-radius: 25px;
+        box-shadow: 0 0 20px rgba(0,0,0,0.2);
+    }
+
+    button {
+        background-color: #ff69b4;
+        border: none;
+        color: white;
+        padding: 12px 25px;
+        font-size: 18px;
+        border-radius: 12px;
+        cursor: pointer;
+        margin-top: 20px;
+        transition: 0.3s;
+    }
+
+    button:hover {
+        background-color: #ff85c1;
+    }
+
+    #photo {
+        display: none;
+        margin-top: 20px;
+        border-radius: 15px;
+        max-width: 300px;
+        box-shadow: 0 0 15px rgba(0,0,0,0.3);
+    }
+
+    audio {
+        display: none;
+        margin-top: 20px;
+    }
+</style>
+</head>
+<body>
+<div id="container">
+    <h1>💖 Valentine’s Surprise 💖</h1>
+    <p id="message">Hi Jo, Happy Valentine’s Day!</p>
+    <button id="nextBtn">OK</button>
+
+    <img id="photo" src="C:\Users\user\OneDrive\Music\623854820_673267299141640_6366648834638388368_n.jpg" alt="Jo's Photo">
+    <audio id="music" controls>
+        <source src="C:\Users\user\OneDrive\Music\love.mp3.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+</div>
+
+<script>
+    const messages = [
+        "Hi Jo, Happy Valentine's Day!",
+        "I hope you're happy 💕",
+        "I just want to say you're special for me 💖",
+        "You always make my day brighter ☀️",
+        "Thanks for being amazing 😘",
+        "This is just a little surprise for you ❤️"
+    ];
+
+    let current = 0;
+
+    const messageEl = document.getElementById("message");
+    const btn = document.getElementById("nextBtn");
+    const photo = document.getElementById("photo");
+    const music = document.getElementById("music");
+
+    btn.addEventListener("click", () => {
+        current++;
+        if(current < messages.length){
+            messageEl.textContent = messages[current];
+        } else if(current === messages.length){
+            messageEl.style.display = "none";
+            btn.style.display = "none";
+            photo.style.display = "block";
+            music.style.display = "block";
+            music.play();
+        }
+    });
+</script>
+</body>
+</html>
