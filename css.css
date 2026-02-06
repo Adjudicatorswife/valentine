@@ -1,0 +1,245 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background: url('92fec214-d719-49bb-9bff-0853433abc8d_640x360.gif') no-repeat center center fixed; /* Gift-themed background image */
+    background-size: cover;
+    color: #ebe8e8;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* Changed to min-height for flexibility */
+    overflow-x: hidden;
+    cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32"><text y="20" font-size="20" fill="%23ff69b4" stroke="%23000" stroke-width="1">💖</text><path d="M16 2 L20 10 L28 10 L22 16 L24 24 L16 20 L8 24 L10 16 L4 10 L12 10 Z" fill="%23ff69b4" opacity="0.5"/></svg>') 16 16, auto; /* Custom neon heart cursor with tail */
+}
+.container {
+    background: rgba(0, 0, 0, 0.8);
+    border-radius: 15px;
+    padding: 2vw; /* Relative padding */
+    max-width: 90vw; /* Scales with screen */
+    width: 100%;
+    max-width: 500px; /* Cap for large screens */
+    text-align: center;
+    box-shadow: 0 0 20px rgba(255, 105, 180, 0.5);
+    position: relative;
+}
+.message {
+    font-size: 1.5rem; /* Rem for scalability */
+    margin-bottom: 1rem;
+    color: #fff;
+}
+.centered-btn {
+    background: #ff69b4;
+    color: white;
+    border: none;
+    padding: 0.8rem 1.5rem; /* Rem for consistency */
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 1rem;
+    margin-top: 0.6rem;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    max-width: 200px;
+}
+.centered-btn:hover {
+    background: #ff1493;
+}
+.pictures {
+    display: none;
+    margin-top: 1.2rem;
+    backdrop-filter: blur(10px); /* Blur background for pictures */
+    background: rgba(255, 255, 255, 0.1);
+    padding: 0.6rem;
+    border-radius: 10px;
+}
+.pictures img {
+    width: 6rem; /* Rem for scaling */
+    height: 6rem;
+    border-radius: 10px;
+    margin: 0.3rem;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+.song-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.9);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+.song-content {
+    background: #333;
+    padding: 1.2rem;
+    border-radius: 15px;
+    text-align: center;
+    color: #fff;
+    max-width: 90vw;
+    width: 100%;
+}
+.song-content iframe {
+    margin-top: 0.6rem;
+    border-radius: 10px;
+    width: 100%;
+    height: 20rem; /* Rem for height */
+}
+.album-view {
+    background: #333;
+    padding: 1.2rem;
+    border-radius: 15px;
+    text-align: center;
+    color: #fff;
+    max-width: 90vw;
+    width: 100%;
+}
+.album-view iframe {
+    width: 100%;
+    height: 20rem;
+    border-radius: 10px;
+}
+.floating-btn {
+    position: fixed;
+    bottom: 1.2rem;
+    right: 1.2rem;
+    background: #ff69b4;
+    color: white;
+    border: none;
+    padding: 0.6rem 0.9rem;
+    border-radius: 25px;
+    cursor: pointer;
+    display: none; /* Hidden initially */
+    font-size: 0.9rem;
+}
+.floating-btn:hover {
+    background: #ff1493;
+}
+.hearts {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    overflow: hidden;
+}
+.heart {
+    position: absolute;
+    color: #ff69b4;
+    font-size: 2rem; /* Rem for scaling */
+    animation: float 5s infinite ease-in-out;
+}
+.trails {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 999;
+}
+.trail-heart {
+    position: absolute;
+    color: #ff69b4;
+    font-size: 1.5rem;
+    opacity: 1;
+    animation: fade 2s forwards;
+}
+@keyframes fade {
+    to { opacity: 0; }
+}
+@keyframes float {
+    0% { transform: translateY(100vh) rotate(0deg); }
+    100% { transform: translateY(-100vh) rotate(360deg); }
+}
+
+/* Responsive rules for all devices */
+@media (max-width: 480px) { /* Small phones */
+    body {
+        padding: 1rem;
+        min-height: auto; /* Allow scrolling */
+    }
+    .container {
+        max-width: 95vw;
+        padding: 1rem;
+    }
+    .message {
+        font-size: 1.2rem;
+    }
+    .centered-btn {
+        padding: 1rem 1.5rem;
+        font-size: 1.1rem;
+    }
+    .pictures img {
+        width: 5rem;
+        height: 5rem;
+    }
+    .song-content, .album-view {
+        padding: 1rem;
+    }
+    .song-content iframe, .album-view iframe {
+        height: 15rem;
+    }
+    .floating-btn {
+        bottom: 0.6rem;
+        right: 0.6rem;
+        padding: 0.5rem 0.8rem;
+        font-size: 0.8rem;
+    }
+    .hearts, .trails {
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 768px) and (min-width: 481px) { /* Tablets */
+    .container {
+        max-width: 80vw;
+        padding: 1.5rem;
+    }
+    .message {
+        font-size: 1.4rem;
+    }
+    .centered-btn {
+        padding: 0.9rem 1.6rem;
+    }
+    .pictures img {
+        width: 5.5rem;
+        height: 5.5rem;
+    }
+    .song-content iframe, .album-view iframe {
+        height: 18rem;
+    }
+}
+
+@media (min-width: 1200px) { /* Large screens/desktops */
+    .container {
+        max-width: 600px; /* Larger cap */
+        padding: 2.5rem;
+    }
+    .message {
+        font-size: 1.8rem;
+    }
+    .centered-btn {
+        padding: 1rem 2rem;
+        font-size: 1.2rem;
+        max-width: 250px;
+    }
+    .pictures img {
+        width: 7rem;
+        height: 7rem;
+    }
+    .song-content iframe, .album-view iframe {
+        height: 25rem;
+    }
+    .floating-btn {
+        padding: 0.8rem 1rem;
+        font-size: 1rem;
+    }
+    .hearts, .trails {
+        font-size: 2.5rem;
+    }
+}

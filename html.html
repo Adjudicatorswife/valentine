@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Valentine's Day, Jo! 🎶</title>
+    <link rel="stylesheet" href="css.css">
+</head>
+<body>
+    <div class="hearts" id="hearts"></div>
+    <div class="trails" id="trails"></div> <!-- For drawing trails -->
+    <div class="container">
+        <div id="message1" class="message">hi jo happy valentines day 💖</div>
+        <button id="btn1" class="centered-btn">OK</button>
+        
+        <div id="message2" class="message" style="display: none;">i hope ur happy 😊</div>
+        <button id="btn2" class="centered-btn" style="display: none;">OK</button>
+        
+        <div id="message3" class="message" style="display: none;">i just want to say ur special for me 🌟</div>
+        <button id="btn3" class="centered-btn" style="display: none;">OK</button>
+        
+        <div id="message4" class="message" style="display: none;">you make my heart skip a beat every day 💓</div>
+        <button id="btn4" class="centered-btn" style="display: none;">OK</button>
+        
+        <div id="message5" class="message" style="display: none;">i love you more than words can say! 🎶</div>
+        <button id="btn5" class="centered-btn" style="display: none;">OK</button>
+        
+        <div class="pictures" id="pictures">
+            <h3>Some memories of you:</h3>
+            <img src="4b3408a2-73cb-4843-b7a0-1595991b2ce1.jpg" alt="Jo pic 1">
+            <img src="8d2e8cc9-51d2-4098-a08a-d17cf9d6593b.jpg" alt="Jo pic 2">
+            <img src="623854820_673267299141640_6366648834638388368_n.jpg" alt="Jo pic 3">
+            <!-- Replace with real image URLs -->
+        </div>
+    </div>
+    
+    <div class="song-modal" id="songModal">
+        <div class="song-content">
+            <h2>Now Playing: A Song for You 🎵</h2>
+            <p>About you by The 1975</p>
+           <iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/track/3hEfpBHxgieRLz4t3kLNEg?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+            <button id="showAlbumBtn">Show Album</button>
+            <button id="exitPanelBtn">Exit Panel</button>
+        </div>
+        <div class="album-view" id="albumView" style="display: none;">
+            <iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/album/0HiwsXForePsWdIZW6EEkK?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+            <button id="backToSongBtn">Back to Song</button>
+        </div>
+    </div>
+    
+    <button id="showPanelBtn" class="floating-btn">🎵 Show Panel</button>
+
+    <script src="script.js"></script>
+</body>
+</html>
